@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background-image: 
+    linear-gradient(rgba(27,79,145,0.1), rgba(27,79,145,0.1)),
+    url("Imagens/Fundos/fundoBrancoPalestra.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1{
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.logo img {
+  width: 110px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+/* CONTAINER PRINCIPAL */
+.palestra-container {
+  position: relative;
+
+    background-image: 
+    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+    url("Imagens/Fundos/fundoBrancoPalestra2.png");
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 40px auto;
+
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+
+}
+
+/* TEXTOS */
+.titulo {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgba(25, 36, 84);
+}
+
+.subtitulo {
+  color:rgba(189, 136, 69);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.descricao {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  line-height: 1.6;
+  color: rgba(50, 58, 100);
+}
+
+/* CONTEÚDO */
+.conteudo {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* PERFIL */
+.perfil {
+  text-align: center;
+  padding-bottom: 140px;
+  color: rgba(38, 41, 77);
+}
+
+.perfil p{
+  margin-top: -15px;
+}
+
+.perfil img {
+  width: 100px;
+  margin-bottom: -15px;
+  border-radius: 50%;
+  border: 2px solid #f0c04d;
+}
+
+/* VIDEO */
+.video iframe {
+  width: 580px;
+  height: 320px;
+  border-radius: 15px;
+}
+
+/* BOTÕES */
+.acoes {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.acoes img{
+  width: 20px;
+  height: 20px;
+}
+
+.btn {
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* botão agenda */
+.agenda {
+  background: white;
+  color: rgba(51, 53, 85);
+}
+
+.agenda:hover {
+  background: #dcdcdc;
+}
+
+/* botão youtube */
+.youtube {
+  background: #ff2b2b;
+  color: white;
+}
+
+.youtube:hover {
+  background: #cc0000;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #08143c, #193fa0);
+  color: white;
+  padding-top: 50px;
+  margin-top: 80px;
+}
+
+/* container principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 60px;
+}
+
+/* colunas */
+.footer-col {
+  max-width: 250px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+/* links */
+.footer-col a {
+  display: block;
+  color: #cfe2ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* redes */
+.socials a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* parte de baixo */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+/* container pra centralizar */
+.agenda-btn-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* botão */
+.agenda-btn {
+  background: white;
+  color: #0b3c8a; /* azul escuro */
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* hover */
+.agenda-btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.desativado {
+  background: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+

@@ -1,0 +1,198 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+      background-image: 
+    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+    url("Imagens/Fundos/fundoBrancoPalestra2.png");
+  color: #333;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px 10px;
+  color: white;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* COLUNAS */
+.coluna {
+  flex: 1;
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.coluna h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* LISTA */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  text-decoration: none;
+  color: black;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e3c72;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* IMAGEM */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* INFO */
+.card .info {
+  padding: 15px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* TAG "EM BREVE" */
+.badge {
+  position: absolute;
+  background: orange;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  top: 10px;
+  right: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(75,184,251,0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1{
+  -webkit-text-stroke: 0.5px black;
+}
+
+.logo img {
+  width: 110px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.live-btn {
+  background: #ffd400;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.footer {
+  background: linear-gradient(135deg, #08143c, #193fa0);
+  color: white;
+  padding-top: 50px;
+  margin-top: 80px;
+}
+
+/* container principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 60px;
+}
+
+/* colunas */
+.footer-col {
+  max-width: 250px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+/* links */
+.footer-col a {
+  display: block;
+  color: #cfe2ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* redes */
+.socials a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* parte de baixo */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+

@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: Arial;
+ background-image: 
+  linear-gradient(rgba(27,79,145,0.5), rgba(27,79,145,0.8)),
+  url("Imagens/Fundos/fundoAzul.png");
+}
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  color: white;
+    background-image: 
+    linear-gradient(rgba(27,79,145,0.1), rgba(27,79,145,0.1)),
+    url("Imagens/Fundos/fundoBrancoPalestra.png");
+}
+
+header h1 {
+  margin: 0;
+}
+
+#logoutBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+}
+
+/* GRID DE EVENTOS */
+main {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* CARD EVENTO */
+.evento {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.evento:hover {
+  transform: scale(1.02);
+}
+
+.evento .info {
+  padding: 15px;
+}
+
+.evento strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.evento span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* AÇÕES */
+.acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.acoes button {
+  flex: 1;
+  margin: 5px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.acoes button:first-child {
+  background: #4facfe;
+  color: white;
+}
+
+.acoes button:last-child {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* BOTÃO FLUTUANTE */
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff7a00;
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.ativo {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 400px;
+  border-radius: 12px;
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #f0f4f8;
+}
+
+textarea {
+  resize: none;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botoes button {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botoes button:first-child {
+  background: #4caf50;
+  color: white;
+}
+
+.botoes button:last-child {
+  background: #ccc;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #08143c, #193fa0);
+  color: white;
+  padding-top: 50px;
+  margin-top: 80px;
+}
+
+/* container principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 60px;
+}
+
+/* colunas */
+.footer-col {
+  max-width: 250px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+/* links */
+.footer-col a {
+  display: block;
+  color: #cfe2ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* redes */
+.socials a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* parte de baixo */
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+}
+
+/* container pra centralizar */
+.agenda-btn-container {
+  margin-top: 30px;
+  text-align: center;
+}

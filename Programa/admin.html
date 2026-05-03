@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - HCS</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Painel Admin - HCS</h1>
+  <button id="logoutBtn">Sair</button>
+</header>
+
+<main>
+  <div id="listaEventos" class="grid"></div>
+</main>
+
+<button id="btnNovo" class="fab">+</button>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2 id="modalTitulo">Novo Evento</h2>
+
+    <form id="formEvento">
+
+      <input type="text" id="titulo" placeholder="Título" required>
+      <input type="text" id="palestrante" placeholder="Palestrante" required>
+      <input type="text" id="instituicao" placeholder="Instituição">
+      <input type="text" id="inscricaoLink" placeholder="Link de inscrição">
+
+      <textarea id="descricao" placeholder="Descrição"></textarea>
+
+      <input type="datetime-local" id="data" required>
+      <input type="text" id="youtube" placeholder="Link embed YouTube">
+
+      <input type="text" id="imagem" placeholder="Imagem (ex: foto.png)">
+      <input type="text" id="banner" placeholder="Banner (ex: banner.jpg)">
+
+      <div class="botoes">
+        <button type="submit">Salvar</button>
+        <button type="button" id="fechar">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- Logo + descrição -->
+    <div class="footer-col">
+      <h2>HCS</h2>
+      <p>
+        Conectando Humanidade, Ciência e Sociedade por meio de palestras acessíveis e conteúdo relevante.
+      </p>
+    </div>
+
+    <!-- Navegação -->
+    <div class="footer-col">
+      <h3>Navegação</h3>
+      <a href="home.html">Início</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="sobre.html">Sobre</a>
+    </div>
+
+    <!-- Contato -->
+    <div class="footer-col">
+      <h3>Contato</h3>
+      <p>Email: contato@hcs.com</p>
+      <p>YouTube: Humanidade, Ciência e Sociedade</p>
+    </div>
+
+    <!-- Redes sociais -->
+    <div class="footer-col">
+      <h3>Redes</h3>
+      <div class="socials">
+        <a href="https://www.youtube.com/@hcs-uff" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/evento.hcs.uff/" target="_blank">Instagram</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 HCS - Todos os direitos reservados</p>
+  </div>
+
+</footer>
+</html>

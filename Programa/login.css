@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: 
+    linear-gradient(rgba(27,79,145,0.1), rgba(27,79,145,0.1)),
+    url("Imagens/Fundos/fundoBrancoPalestra.png");
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CARD PRINCIPAL */
+.container {
+  position: relative;
+  display: flex;
+  width: 800px;
+  height: 450px;
+      background-image: 
+    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+    url("Imagens/Fundos/fundoBrancoPalestra2.png");
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* LADO ESQUERDO */
+.left {
+  flex: 1;
+  padding: 40px;
+}
+
+.left h2 {
+  margin-bottom: 30px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  background: #e9eef5;
+}
+
+/* ESQUECI SENHA */
+.forgot {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* BOTÃO */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(50, 58, 100);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e96d00;
+}
+
+/* LADO DIREITO */
+.right {
+  flex: 1;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CÍRCULO */
+.logo-circle img {
+  width: 340px;   /* controla largura */
+  height: auto;   /* mantém proporção */
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .right {
+    height: 200px;
+  }
+}
