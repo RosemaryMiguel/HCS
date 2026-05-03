@@ -35,7 +35,7 @@ document.getElementById("logoutBtn").onclick = async () => {
   await signOut(auth);
 
   // 🔥 volta pra HOME (como você quer)
-  window.location.href = "home.html";
+  window.location.href = "index.html";
 };
 
 // 🔒 trava o acesso
