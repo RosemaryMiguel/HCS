@@ -1,4 +1,4 @@
-// 🔥 IMPORTS CORRETOS (ESSENCIAL)
+// 🔥 IMPORTS
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
 import {
@@ -7,24 +7,22 @@ import {
   getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// 🔧 CONFIG DO FIREBASE
+// 🔧 CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyCKER2IZUX8J2kWuPpXDeQdrofgpDf6MpY",
   authDomain: "hcs-site-bca98.firebaseapp.com",
   projectId: "hcs-site-bca98",
 };
 
-// 🚀 INICIALIZAÇÃO
+// 🚀 INIT
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // 🔥 FUNÇÃO PRINCIPAL
 async function carregarEventos() {
-  const futurosContainer = document.getElementById("futuros");
-  const passadosContainer = document.getElementById("passados");
 
-  futurosContainer.innerHTML = "<p>Carregando...</p>";
-  passadosContainer.innerHTML = "<p>Carregando...</p>";
+  const container = document.getElementById("lista-eventos");
+  container.innerHTML = "<p>Carregando eventos...</p>";
 
   try {
     const snapshot = await getDocs(collection(db, "eventos"));
@@ -38,66 +36,76 @@ async function carregarEventos() {
         id: docSnap.id,
         titulo: data.titulo || "Sem título",
         palestrante: data.palestrante || "Desconhecido",
+        descricao: data.descricao || "",
         banner: data.banner || "Imagens/default.png",
         data: data.data ? new Date(data.data.seconds * 1000) : null
       });
     });
 
-    const agora = new Date();
+    // ordenar do mais recente → mais antigo
+    eventos.sort((a, b) => b.data - a.data);
 
-    const futuros = eventos.filter(e => e.data && e.data >= agora);
-    const passados = eventos.filter(e => e.data && e.data < agora);
+    container.innerHTML = "";
 
-    futuros.sort((a, b) => a.data - b.data);
-    passados.sort((a, b) => b.data - a.data);
+    // 🔥 AGRUPAR POR ANO
+    const eventosPorAno = {};
 
-    futurosContainer.innerHTML = "";
-    passadosContainer.innerHTML = "";
+    eventos.forEach(e => {
+      if (!e.data) return;
 
-    // 🧩 CRIA CARD
-    function criarCard(e, isFuturo = false) {
-      const card = document.createElement("a");
-      card.className = "card";
-      card.href = `palestra.html?id=${e.id}`;
-      card.style.position = "relative";
+      const ano = e.data.getFullYear();
 
-      card.innerHTML = `
-        ${isFuturo ? '<span class="badge">Em breve</span>' : ""}
-        <img src="${e.banner}" onerror="this.src='Imagens/default.png'">
-        <div class="info">
-          <h3>${e.titulo}</h3>
-          <p>${e.palestrante}</p>
-          <p>${e.data ? e.data.toLocaleString() : "Data não definida"}</p>
-        </div>
-      `;
+      if (!eventosPorAno[ano]) {
+        eventosPorAno[ano] = [];
+      }
 
-      return card;
-    }
+      eventosPorAno[ano].push(e);
+    });
 
-    // 🔵 FUTUROS
-    if (futuros.length === 0) {
-      futurosContainer.innerHTML = "<p>Nenhuma palestra futura.</p>";
-    } else {
-      futuros.forEach(e => {
-        futurosContainer.appendChild(criarCard(e, true));
+    // 🔥 RENDERIZAÇÃO
+    Object.keys(eventosPorAno)
+      .sort((a, b) => b - a) // ano mais recente primeiro
+      .forEach(ano => {
+
+        // título do ano
+        const tituloAno = document.createElement("h2");
+        tituloAno.className = "ano";
+        tituloAno.textContent = ano;
+
+        container.appendChild(tituloAno);
+
+        // eventos daquele ano
+        eventosPorAno[ano].forEach(e => {
+          container.appendChild(criarEvento(e));
+        });
       });
-    }
-
-    // ⚫ PASSADOS
-    if (passados.length === 0) {
-      passadosContainer.innerHTML = "<p>Nenhuma palestra passada.</p>";
-    } else {
-      passados.forEach(e => {
-        passadosContainer.appendChild(criarCard(e));
-      });
-    }
 
   } catch (err) {
-    console.error("ERRO REAL:", err);
-
-    futurosContainer.innerHTML = "<p>Erro ao carregar eventos.</p>";
-    passadosContainer.innerHTML = "<p>Erro ao carregar eventos.</p>";
+    console.error("Erro:", err);
+    container.innerHTML = "<p>Erro ao carregar eventos.</p>";
   }
+}
+
+// 🔥 CRIA CARD NO NOVO FORMATO
+function criarEvento(e) {
+  const card = document.createElement("a");
+  card.className = "evento-card";
+  card.href = `palestra.html?id=${e.id}`;
+
+  card.innerHTML = `
+    <img class="evento-img" src="${e.banner}" 
+         onerror="this.src='Imagens/default.png'">
+
+    <div class="evento-info">
+      <h3>${e.titulo}</h3>
+      <p>${e.palestrante}</p>
+      <p class="evento-data">
+        ${e.data ? e.data.toLocaleString() : "Data não definida"}
+      </p>
+    </div>
+  `;
+
+  return card;
 }
 
 // 🚀 EXECUTA

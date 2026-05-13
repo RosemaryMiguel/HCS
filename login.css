@@ -1,14 +1,92 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+
   background-image: 
     linear-gradient(rgba(27,79,145,0.1), rgba(27,79,145,0.1)),
     url("Imagens/Fundos/fundoBrancoPalestra.png");
 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  padding: 15px 40px;
+  background: rgba(66, 180, 252);
+  box-shadow: 10px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo h1{
+  font-size: 55px;
+  color: white;
+  margin: 0;
+
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0px  4px 12px rgba(0,0,0,0.35);
+}
+
+.logo img {
+  width: 110px;
+  margin-right: 10px;
+}
+
+nav a {
+  position: relative;
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+
+  display: inline-block;
+
+  text-shadow:
+    -0.5px -0.5px 0 rgba(0,0,0,0.8),
+    0.5px -0.5px 0 rgba(0,0,0,0.8),
+    -0.5px  0.5px 0 rgba(0,0,0,0.8),
+    0.5px  0.5px 0 rgba(0,0,0,0.8),
+    0px 3px 8px rgba(0,0,0,0.25);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 10px;
+
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+nav a:hover::after,
+nav a.ativo::after {
+  transform: scaleX(1);
 }
 
 /* CARD PRINCIPAL */
@@ -52,6 +130,15 @@ input {
   border-radius: 8px;
   border: none;
   background: #e9eef5;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: calc(100vh - 100px); /* altura da tela - header */
+  padding: 40px 20px;
 }
 
 /* ESQUECI SENHA */
@@ -109,4 +196,54 @@ button:hover {
   .right {
     height: 200px;
   }
+}
+
+.footer {
+  background: linear-gradient(135deg, #08143c, #193fa0);
+  color: white;
+  padding-top: 50px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 60px;
+}
+
+.footer-col {
+  max-width: 250px;
+}
+
+.footer-col h2,
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+.footer-col a {
+  display: block;
+  color: #cfe2ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.socials a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
 }
