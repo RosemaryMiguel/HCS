@@ -789,103 +789,6 @@ nav a.ativo::after {
   }
 }
 
-/* =====================================================
-   NEWSLETTER
-   ===================================================== */
-.newsletter {
-  padding: 60px 80px;
-  background: rgba(11, 60, 138, 0.4);
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.nl-texto {
-  flex: 1;
-  min-width: 220px;
-}
-
-.nl-texto h2 {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.nl-texto p {
-  font-size: 15px;
-  opacity: 0.8;
-  line-height: 1.6;
-}
-
-.nl-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 340px;
-}
-
-.nl-input-row {
-  display: flex;
-  gap: 10px;
-}
-
-.nl-input {
-  flex: 1;
-  padding: 14px 18px;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.12);
-  color: white;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s, background 0.3s;
-  min-width: 0;
-}
-
-.nl-input::placeholder {
-  color: rgba(255,255,255,0.5);
-}
-
-.nl-input:focus {
-  border-color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.18);
-}
-
-.nl-btn {
-  background: white;
-  color: #0b3c8a;
-  padding: 14px;
-  border-radius: 30px;
-  border: none;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.nl-btn:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-
-.nl-nota {
-  font-size: 12px;
-  opacity: 0.5;
-  text-align: center;
-  margin: 0;
-}
-
-.nl-sucesso {
-  font-size: 15px;
-  color: #B6FFD9;
-  text-align: center;
-  padding: 14px 20px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 16px;
-  min-width: 340px;
-  margin: 0;
-}
 
 /* =====================================================
    FOOTER
@@ -1020,6 +923,8 @@ nav a.ativo::after {
 
   .info-cards {
     width: 100%;
+    max-width: 100%;          /* remove o limite de 800px */
+    box-sizing: border-box;
   }
 
   .btn-info-link {
@@ -1104,6 +1009,10 @@ nav a.ativo::after {
   nav a {
     margin: 0 6px;
     font-size: 13px;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;   /* 1 coluna em telas muito pequenas */
   }
 
   .hero-text h1 {
