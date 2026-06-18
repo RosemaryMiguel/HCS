@@ -289,6 +289,44 @@ nav a.ativo::after {
   font-size: 14px;
 }
 
+.info-extra {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0 25px;
+  flex-wrap: wrap;
+}
+
+/* estilo das "tags" */
+.info-extra span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 16px;
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: rgba(25, 36, 84);
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.7);
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-extra span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 /* RESPONSIVO */
 @media (max-width: 700px) {
 

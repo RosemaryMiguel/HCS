@@ -26,6 +26,10 @@
 
   <h1 class="titulo" id="titulo"></h1>
   <h2 class="subtitulo" id="subtitulo"></h2>
+  <div class="info-extra">
+    <span id="tipo"></span>
+    <span id="local"></span>
+  </div>
 
   <p class="descricao" id="descricao"></p>
 
@@ -135,6 +139,8 @@ const safe = (v, d="Não informado") => v && v.trim() !== "" ? v : d;
 document.getElementById("titulo").innerText = safe(data.titulo);
 document.getElementById("subtitulo").innerText = "Com " + safe(data.palestrante);
 document.getElementById("descricao").innerText = safe(data.descricao);
+document.getElementById("tipo").innerText = "Tipo: " + safe(data.tipo);
+document.getElementById("local").innerText = "Local: " + safe(data.local);
 
 document.getElementById("nomePalestrante").innerText = safe(data.palestrante);
 document.getElementById("instituicao").innerText = safe(data.instituicao);
@@ -160,7 +166,7 @@ if (data.data) {
 
   const titulo = data.titulo || "Palestra HCS";
   const descricao = data.descricao || "";
-  const local = "Online";
+  const local = data.local || "Online";
 
   const linkAgenda =
     "https://www.google.com/calendar/render?action=TEMPLATE" +

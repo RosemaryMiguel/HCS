@@ -95,6 +95,8 @@ window.editar = async (id) => {
 
     const data = snap.data();
 
+    document.getElementById("tipo").value = data.tipo || "";
+    document.getElementById("local").value = data.local || "";
     document.getElementById("titulo").value = data.titulo || "";
     document.getElementById("palestrante").value = data.palestrante || "";
     document.getElementById("instituicao").value = data.instituicao || "";
@@ -142,6 +144,8 @@ document.getElementById("formEvento").addEventListener("submit", async (e) => {
   try {
     const evento = {
       titulo,
+      tipo: document.getElementById("tipo").value || "",
+      local: document.getElementById("local").value || "",
       palestrante: document.getElementById("palestrante").value || "",
       instituicao: document.getElementById("instituicao").value || "",
       descricao: document.getElementById("descricao").value || "",
